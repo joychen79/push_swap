@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/15 20:02:00 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/15 20:07:18 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ static void	check_digital(t_stack *stack)
 		if (number[0] == '-' || number[0] == '+' && ft_strlen(number) > 1)
 			i++;
 		if (!ft_isdigit(number[i]))
-		{
 			return (0);
-		}
 	i++;
 	}
 	return (1);
