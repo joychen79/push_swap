@@ -1,43 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mov_swap.c                                         :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 14:56:46 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/15 17:06:28 by jingchen         ###   ########.fr       */
+/*   Created: 2023/09/15 17:57:53 by jingchen          #+#    #+#             */
+/*   Updated: 2023/09/15 19:11:50 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack **stack)
+void	free_stack(t_stack **s)
 {
-	t_stack	*aux;
+	t_stack	*tmp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (s)
+	{
+		while (*s)
+		{
+			tmp = (*s)->next;
+			free(*s);
+			(*s) = tmp;
+		}
+	}
+}
+
+void	free_str(char **lst)
+{
+	char	*n1;
+
+	if (!lst)
 		return ;
-	aux = (*stack)->next;
-	(*stack)->next = *stack;
-	*stack = aux;
+	while (*lst)
+	{
+		n1 = *lst;
+		lst++;
+		free(n1);
+	}
+	*lst = NULL;
 }
 
-void	sa(t_stack **stack_a)
+void	error_message(void)
 {
-	swap(stack_a);
-	ft_printf("sa\n");
-}
-
-void	sb(t_stack **stack_b)
-{
-	swap(stack_b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_stack **stack_a, t_stack **stack_b)
-{
-	swap(stack_a);
-	swap(stack_b);
-	ft_printf("ss\n");
+	ft_printf("Error\n");
+	exit (1);
 }

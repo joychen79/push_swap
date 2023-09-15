@@ -6,13 +6,13 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:44:21 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/09 16:46:29 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:06:00 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **src, t_stack **dest)
+static void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*aux;
 
