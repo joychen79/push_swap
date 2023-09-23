@@ -6,11 +6,11 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 12:59:00 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 14:49:43 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:15:27 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 //在stack_a的数值按位置排序
 void	assign_position(t_stack **stack)

@@ -6,11 +6,11 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:36:25 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:07:02 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:16:05 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {

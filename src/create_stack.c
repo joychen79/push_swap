@@ -6,11 +6,11 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:07:39 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:15:34 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 static t_stack	*stack_new_element(int value)
 {

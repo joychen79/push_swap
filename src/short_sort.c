@@ -6,11 +6,11 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 13:18:29 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 15:40:40 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:16:11 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void	short_sort(t_stack **stack)
 {

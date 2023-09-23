@@ -6,11 +6,11 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 12:52:39 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 14:51:55 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:15:10 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 //把数值按大小编号
 void	assign_index(t_stack **stack, int stack_size)

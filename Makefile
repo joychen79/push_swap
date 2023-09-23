@@ -10,7 +10,7 @@ SRCS	=	src/push_swap.c\
 			src/valid_stack.c\
 			src/assign_index.c\
 			src/assign_pos_target.c\
-			src/short_sort.create_stack
+			src/short_sort.c
 
 OBJS	= $(SRCS:.c = .o)
 
