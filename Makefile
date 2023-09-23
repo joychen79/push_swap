@@ -10,7 +10,8 @@ SRCS	=	src/push_swap.c\
 			src/valid_stack.c\
 			src/assign_index.c\
 			src/assign_pos_target.c\
-			src/short_sort.c
+			src/short_sort.c\
+			src/mov_utils.c
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -34,12 +35,11 @@ bonus:		$(LIBFT) $(OBJSBNS)
 			@$(CC) $(CFLAGS) $(OBJSBNS) $(LIBFT_SRC)$(LIBFT) -o $(NAME_BONUS)
 
 clean:
-			@$(RM) $(NAME) $(OBJS)
-
+			@$(RM) $(NAME) $(OBJS) $(OBJSBNS) $(NAME_BONUS)
 
 fclean:		clean
 			@make -C libft fclean
 
 re:			fclean all
 
-.PHONY: all clean fclean re
+.PHONY:		all clean fclean bonus re
