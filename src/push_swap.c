@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:36:25 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:24:48 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:33:50 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_b = NULL;
 	stack_a = create_stack(argc, argv);
-	len = stack_size(stack_a);
-	assign_index(stack_a, len + 1);
-	push_swap(stack_a, stack_b, len);
+	len = stack_size(&stack_a);
+	assign_index(&stack_a, len + 1);
+	push_swap(&stack_a, &stack_b, len);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

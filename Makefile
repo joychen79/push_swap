@@ -14,14 +14,13 @@ SRCS	=	src/push_swap.c\
 
 OBJS	= $(SRCS:.c = .o)
 
-AR			=	ar -rcs
-CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra
+CC					=	gcc
+RM					=	rm -f
+CFLAGS				=	-Wall -Werror -Wextra
 
-RM			= 	rm -rf
 
-LIBFT				=	libft.a
-LIBFT_SRC			=	./libft/
+$(LIBFT):
+			@make -C libft bonus
 
 all:	$(LIBFT) $(NAME)
 
@@ -32,12 +31,12 @@ $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(OBJS) $(LIBFT_SRC)$(LIBFT) -o $(NAME)
 
 clean:
-			$(RM) $(OBJS)
+			@$(RM) $(NAME) $(OBJS)
+
 
 fclean:		clean
-			$(RM) $(NAME)
 			@make -C libft fclean
 
 re:			fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
