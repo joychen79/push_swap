@@ -12,23 +12,26 @@ SRCS	=	src/push_swap.c\
 			src/assign_pos_target.c\
 			src/short_sort.c
 
-OBJS	= $(SRCS:.c = .o)
+OBJS	= $(SRCS:.c=.o)
+
+LIBFT				=	libft.a
+LIBFT_SRC			=	./libft/
 
 CC					=	gcc
 RM					=	rm -f
 CFLAGS				=	-Wall -Werror -Wextra
 
 
+all:		$(LIBFT) $(NAME)
+
 $(LIBFT):
 			@make -C libft bonus
 
-all:	$(LIBFT) $(NAME)
-
-$(LIBFT):
-			@make -C libft
-
 $(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) $(LIBFT_SRC)$(LIBFT) -o $(NAME)
+			@$(CC) $(CFLAGS) $(OBJS) $(LIBFT_SRC)$(LIBFT) -o $(NAME)
+
+bonus:		$(LIBFT) $(OBJSBNS)
+			@$(CC) $(CFLAGS) $(OBJSBNS) $(LIBFT_SRC)$(LIBFT) -o $(NAME_BONUS)
 
 clean:
 			@$(RM) $(NAME) $(OBJS)
