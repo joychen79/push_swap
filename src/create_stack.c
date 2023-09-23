@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/15 20:00:58 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:07:39 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_stack	*stack_new_element(int value)
 	new->value = value;
 	new->index = 0;
 	new->pos = 0;
-	new->target = 0;
+	new->target_pos = 0;
 	new->cost_a = 0;
 	new->cost_b = 0;
 	new->next = NULL;
@@ -46,6 +46,7 @@ t_stack	*create_stack(int ac, char **argv)
 		while (tmp[j])
 		{
 			s_tmp = stack_new_element(ft_atoi(tmp[j]));
+			valid_stack(stack_a);
 			ft_lstadd_back(&stack_a, s_tmp);
 			j++;
 		}
@@ -55,3 +56,4 @@ t_stack	*create_stack(int ac, char **argv)
 	}
 	return (stack_a);
 }
+
