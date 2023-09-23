@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 15:12:04 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:59:32 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:25:06 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	rotate(t_stack **stack)
 		return ;
 	aux = *stack;
 	*stack = (*stack)->next;
-	ft_lstadd_back(stack, aux);
+	addback_back(stack, aux);
 	aux->next = NULL;
 }
 

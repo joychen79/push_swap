@@ -1,44 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mov_rev_rotate.c                                   :+:      :+:    :+:   */
+/*   mov_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 15:12:04 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 17:24:46 by jingchen         ###   ########.fr       */
+/*   Created: 2023/09/23 17:14:02 by jingchen          #+#    #+#             */
+/*   Updated: 2023/09/23 17:23:28 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-static void	rev_rotate(t_stack **stack)
+t_stack	*last_stack(t_stack **stack)
 {
 	t_stack	*aux;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-		return ;
-	aux = last_stack(*stack);
-	*stack = (*stack)->next;
-	addstack_front(stack, aux);
-	aux->next = NULL;
+	aux = *stack;
+	while (stack)
+	{
+		aux = (*stack)->next;
+	}
+	return (aux);
 }
 
-void	rra(t_stack **stack_a)
+void	addstack_back(t_stack **stack, t_stack *new)
 {
-	rev_rotate (stack_a);
-	ft_printf ("rra\n");
+	t_stack	*aux;
+
+	if (stack)
+	{
+		if (!(*stack))
+			*stack = new;
+		else
+		{
+			aux = *stack;
+			while (aux->next)
+				aux = aux->next;
+			aux->next = new;
+		}
+	}
 }
 
-void	rrb(t_stack **stack_b)
+void	addstack_front(t_stack **stack, t_stack *new)
 {
-	rev_rotate (stack_b);
-	ft_printf ("rrb\n");
-}
-
-void	rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	rev_rotate (stack_a);
-	rev_rotate (stack_b);
-	ft_printf ("rrr\n");
+	if (stack && new)
+	{
+		new -> next = *stack;
+		*stack = new;
+	}
 }
