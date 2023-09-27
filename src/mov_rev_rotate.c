@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 15:12:04 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 17:24:46 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/23 17:29:39 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	rev_rotate(t_stack **stack)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	aux = last_stack(*stack);
+	aux = last_stack(stack);
 	*stack = (*stack)->next;
 	addstack_front(stack, aux);
 	aux->next = NULL;

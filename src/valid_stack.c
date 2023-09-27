@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:59:54 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:04:21 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,50 +29,89 @@ static int	check_repeat(t_stack **stack)
 		}
 		*stack = (*stack)->next;
 	}
+	ft_printf("no repeat\n");
 	return (1);
 }
 
-static int	check_min_max(t_stack **stack)
+/*static int	check_min_max(t_stack **stack)
+{
+	long int	aux;
+
+	while (*stack)
+	{
+		aux = (*stack)->value;
+		if (aux > 214748367 || aux < -214748368)
+			{
+				ft_printf("no entre min - max\n");
+				return (0);
+			}
+		else
+			ft_printf("entre min - max\n");
+	}
+	return (1);
+}
+*/
+
+static int	check_min_max(char **numbers)
 {
 	int			i;
 	long int	aux;
 
 	i = 0;
-	while (*stack)
+	while (numbers[i] != NULL)
 	{
-		aux = (*stack)->value;
-		if (aux > INT_MAX || aux < INT_MIN)
+		aux = ft_atoi(numbers[i]);
+		if (ft_strlen(numbers[i++]) > 9
+			|| aux > 214748367 || aux < -214748368)
+		{
+			free_str(numbers);
 			return (0);
+		}
 	}
 	return (1);
 }
 
-static int	check_digital(t_stack **stack)
+//DELETE THIS!!!
+static void	visualize_list(t_stack *stack)
+{
+	while (stack)
+	{
+		ft_printf("%i\n", (stack->value));
+		stack = stack->next;
+	}
+	ft_printf("\n");
+}
+
+void	check_digital(char *value)
 {
 	int		i;
-	char	*number;
 
 	i = 0;
-	number = ft_itoa((*stack)->value);
-	while (number[i])
+	while (value[i])
 	{
-		if (number[0] == '-' || number[0] == '+' && ft_strlen(number) > 1)
+		if ((value[0] == '-' || value[0] == '+') && ft_strlen(value) > 1)
 			i++;
-		if (!ft_isdigit(number[i]))
-			return (0);
-	i++;
+		while (value[i])
+		{
+			if (!ft_isdigit(value[i]))
+				error_message();
+		i++;
+		}
+		ft_printf ("all digital\n");
 	}
-	return (1);
+	//return (1);
 }
 
 void	valid_stack(t_stack **stack)
 {
-	if (stack == NULL || *stack == NULL)
+	visualize_list(*stack);
+	if (stack == NULL)
 	{
+		ft_printf("no stack created\n");
 		free_stack (stack);
 		error_message();
 	}
-	if (!check_repeat(stack) || !check_min_max(stack) || !check_digital(stack))
+	if (!check_repeat(stack) || !check_min_max(stack))
 	{
 		free_stack (stack);
 		error_message();

@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:23:56 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 17:23:50 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:19:49 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	assign_position(t_stack **stack);
 int		find_min_position(t_stack **stack);
 void	find_target_position(t_stack **stack_a, t_stack **stack_b);
 void	short_sort(t_stack **stack);
+void	check_digital(char *value);
 
 #endif

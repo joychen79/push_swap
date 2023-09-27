@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:57:53 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:59:50 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/27 20:19:33 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_stack(t_stack **s)
 		{
 			tmp = (*s)->next;
 			free(*s);
-			(*s) = tmp;
+			*s = tmp;
 		}
 	}
 }
@@ -64,7 +64,7 @@ int	stack_size(t_stack **stack)
 	int	size;
 
 	size = 0;
-	if (!*stack || !stack)
+	if (!stack || !*stack)
 		return (0);
 	while (*stack)
 	{
