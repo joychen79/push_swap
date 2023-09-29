@@ -6,35 +6,37 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 13:18:29 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:59:45 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:49:22 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	short_sort(t_stack **stack)
+static int	find_highest_index(t_stack *stack)
 {
-	int	min_idx_pos;
+	int		max;
 
-	min_idx_pos = find_min_position(stack);
-	if (is_sorted(stack) == 1)
-		return ;
-	if (min_idx_pos > stack_size(stack) / 2)
+	max = stack->index;
+	while (stack)
 	{
-		while (min_idx_pos < stack_size(stack))
-		{
-			rra(stack);
-			min_idx_pos++;
-		}
+		if (stack->index > max)
+			max = stack->index;
+		stack = stack->next;
 	}
-	else
-	{
-		while (min_idx_pos > 0)
-		{
-			ra(stack);
-			min_idx_pos--;
-		}
-	}
+	return (max);
 }
 
+void	short_sort(t_stack **stack)
+{
+	int		highest;
 
+	if (is_sorted(stack))
+		return ;
+	highest = find_highest_index(*stack);
+	if ((*stack)->index == highest)
+		ra(stack);
+	else if ((*stack)->next->index == highest)
+		rra(stack);
+	if ((*stack)->index > (*stack)->next->index)
+		sa(stack);
+}

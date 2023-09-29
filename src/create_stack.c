@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 15:29:02 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:42:03 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	check_digital(char *value)
 		i++;
 		}
 	}
-	ft_printf ("all digital\n");
+	//ft_printf ("all digital\n");
 }
 
 static void	check_min_max(char **numbers)
@@ -48,7 +48,7 @@ static void	check_min_max(char **numbers)
 			error_message();
 		}
 	}
-	ft_printf ("entre min-max\n");
+	//ft_printf ("entre min-max\n");
 }
 
 static void	check_repeat(t_stack *stack)
@@ -69,7 +69,7 @@ static void	check_repeat(t_stack *stack)
 		}
 		stack = stack->next;
 	}
-	ft_printf("no repeat\n");
+	//ft_printf("no repeat\n");
 }
 
 static t_stack	*stack_new_element(int value)
