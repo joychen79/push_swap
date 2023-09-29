@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:57:53 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 15:55:37 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:50:15 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void	error_message(void)
 	exit (1);
 }
 
-int	is_sorted(t_stack **stack)
+int	is_sorted(t_stack *stack)
 {
-	while ((*stack)->next != NULL)
+	while (stack->next != NULL)
 	{
-		if ((*stack)->value > (*stack)->next->value)
+		if (stack->value > stack->next->value)
 			return (0);
-		*stack = (*stack)->next;
+		stack = stack->next;
 	}
 	return (1);
 }

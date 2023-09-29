@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 15:42:03 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 19:32:53 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	check_digital(char *value)
 		i++;
 		}
 	}
-	//ft_printf ("all digital\n");
 }
 
 static void	check_min_max(char **numbers)
@@ -48,7 +47,6 @@ static void	check_min_max(char **numbers)
 			error_message();
 		}
 	}
-	//ft_printf ("entre min-max\n");
 }
 
 static void	check_repeat(t_stack *stack)
@@ -69,7 +67,6 @@ static void	check_repeat(t_stack *stack)
 		}
 		stack = stack->next;
 	}
-	//ft_printf("no repeat\n");
 }
 
 static t_stack	*stack_new_element(int value)
@@ -117,43 +114,3 @@ t_stack	*create_stack(int ac, char **argv)
 	}
 	return (stack_a);
 }
-
-/*static t_stack	*read_num(char *argv)
-{
-	t_stack	*s_tmp;
-	char	**num;
-	int		i;
-
-	i = 0;
-	s_tmp = NULL;
-	check_digital(argv);
-	num = ft_split(argv, ' ');
-	while (num[i])
-	{
-		s_tmp = stack_new_element(ft_atoi(num[i]));
-		return (s_tmp);
-		i++;
-	}
-	free_str(num);
-	free(num);
-	return (s_tmp);
-}	
-
-t_stack	*create_stack(int ac, char **argv)
-{
-	t_stack	*stack_a;
-	int		i;
-	t_stack	*s_tmp;
-
-	stack_a = NULL;
-	i = 1;
-	while (ac > i)
-	{
-		s_tmp = read_num(argv[i]);
-		addstack_back(&stack_a, s_tmp);
-		valid_stack(&stack_a);
-		i++;
-	}
-	return (stack_a);
-}
-*/
