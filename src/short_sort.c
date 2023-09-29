@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 13:18:29 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 15:49:22 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 19:38:48 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	short_sort(t_stack **stack)
 {
 	int		highest;
 
-	if (is_sorted(stack))
+	if (is_sorted(*stack))
 		return ;
 	highest = find_highest_index(*stack);
 	if ((*stack)->index == highest)

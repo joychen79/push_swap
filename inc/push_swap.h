@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:23:56 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 19:27:32 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 19:42:12 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-//t_stack	*last_stack(t_stack *stack);
 void	addstack_back(t_stack **stack, t_stack *new);
-//void	addstack_front(t_stack **stack, t_stack *new);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack_a);

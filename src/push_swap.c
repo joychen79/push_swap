@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:36:25 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 17:42:17 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 19:43:24 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_b = NULL;
 	stack_a = create_stack(argc, argv);
-	//visualize_list(stack_a);
 	len = stack_size(stack_a);
 	ft_printf("%d\n", len);
 	if (!stack_a)
