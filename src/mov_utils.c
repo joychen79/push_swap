@@ -6,20 +6,20 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:14:02 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/27 20:38:13 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:01:28 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_stack	*last_stack(t_stack **stack)
+t_stack	*last_stack(t_stack *stack)
 {
 	t_stack	*aux;
 
-	aux = *stack;
+	aux = stack;
 	while (stack)
 	{
-		aux = (*stack)->next;
+		aux = stack->next;
 	}
 	return (aux);
 }

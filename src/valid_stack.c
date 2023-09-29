@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/27 21:04:21 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:06:16 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,12 @@ static int	check_min_max(char **numbers)
 		if (ft_strlen(numbers[i++]) > 9
 			|| aux > 214748367 || aux < -214748368)
 		{
+			ft_printf ("out of min-max\n");
 			free_str(numbers);
 			return (0);
 		}
 	}
+	ft_printf ("entre min-max\n");
 	return (1);
 }
 

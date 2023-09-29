@@ -7,7 +7,6 @@ SRCS	=	src/push_swap.c\
 			src/mov_swap.c\
 			src/utils.c\
 			src/create_stack.c\
-			src/valid_stack.c\
 			src/assign_index.c\
 			src/assign_pos_target.c\
 			src/short_sort.c\

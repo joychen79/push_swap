@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:23:56 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/27 20:19:49 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:23:16 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-t_stack	*last_stack(t_stack **stack);
+t_stack	*last_stack(t_stack *stack);
 void	addstack_back(t_stack **stack, t_stack *new);
 void	addstack_front(t_stack **stack, t_stack *new);
 void	pa(t_stack **stack_a, t_stack **stack_b);
@@ -48,13 +48,13 @@ void	error_message(void);
 int		is_sorted(t_stack **stack);
 int		stack_size(t_stack **stack);
 t_stack	*create_stack(int ac, char **argv);
-void	valid_stack(t_stack **stack);
+//void	valid_stack(t_stack **stack);
 void	assign_index(t_stack **stack, int stack_size);
 int		find_highest_index(t_stack **stack);
 void	assign_position(t_stack **stack);
 int		find_min_position(t_stack **stack);
 void	find_target_position(t_stack **stack_a, t_stack **stack_b);
 void	short_sort(t_stack **stack);
-void	check_digital(char *value);
+//void	check_digital(char *value);
 
 #endif
