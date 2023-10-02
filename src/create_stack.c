@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 19:32:53 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/02 20:09:35 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	check_min_max(char **numbers)
 			|| aux > 214748367 || aux < -214748368)
 		{
 			ft_printf ("out of min-max\n");
-			free_str(numbers);
 			error_message();
 		}
 	}
@@ -109,7 +108,7 @@ t_stack	*create_stack(int ac, char **argv)
 			check_repeat(stack_a);
 			j++;
 		}
-		free(tmp);
+		free_str(tmp);
 		i++;
 	}
 	return (stack_a);

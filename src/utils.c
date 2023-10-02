@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:57:53 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 16:50:15 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/02 20:03:49 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	free_stack(t_stack **s)
 		while (*s)
 		{
 			tmp = (*s)->next;
+			printf("hola%p %d\n", *s, (*s)->value);
 			free(*s);
 			*s = tmp;
 		}
