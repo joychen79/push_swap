@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:57:53 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/02 20:03:49 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:30:50 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,21 @@ void	free_stack(t_stack **s)
 			free(*s);
 			*s = tmp;
 		}
+		free(s);
 	}
 }
 
 void	free_str(char **lst)
 {
-	char	*n1;
+	int	i;
 
-	if (!lst)
-		return ;
-	while (*lst)
+	i = 0;
+	while (lst[i])
 	{
-		n1 = *lst;
-		lst++;
-		free(n1);
+		free(lst[i]);
+		i++;
 	}
-	*lst = NULL;
+	lst = NULL;
 }
 
 void	error_message(void)

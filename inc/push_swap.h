@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 13:23:56 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/02 18:39:42 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:02:44 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_str(char **lst);
 void	error_message(void);
 int		is_sorted(t_stack *stack);
 int		stack_size(t_stack *stack);
-t_stack	*create_stack(int ac, char **argv);
+t_stack	**create_stack(int ac, char **argv);
 void	assign_index(t_stack *stack, int stack_size);
 void	assign_position(t_stack **stack);
 int		find_min_position(t_stack **stack);
@@ -58,5 +58,7 @@ void	make_cheapest_move(t_stack **stack_a, t_stack **stack_b);
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void	pb_keep_three(t_stack **stack_a, t_stack **stack_b);
 int		abslt(int nb);
+/*char	**split(char const *s, char c);
+size_t	ft_strlen(const char *s);*/
 
 #endif

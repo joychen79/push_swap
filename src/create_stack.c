@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/02 20:09:35 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:25:48 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,7 @@ static void	check_min_max(char **numbers)
 		aux = ft_atoi(numbers[i]);
 		if (ft_strlen(numbers[i++]) > 9
 			|| aux > 214748367 || aux < -214748368)
-		{
-			ft_printf ("out of min-max\n");
 			error_message();
-		}
 	}
 }
 
@@ -54,7 +51,7 @@ static void	check_repeat(t_stack *stack)
 
 	while (stack)
 	{
-		tmp = (stack)->next;
+		tmp = stack->next;
 		while (tmp)
 		{
 			if (stack->value == tmp->value)
@@ -85,16 +82,18 @@ static t_stack	*stack_new_element(int value)
 	return (new);
 }
 
-t_stack	*create_stack(int ac, char **argv)
+t_stack	**create_stack(int ac, char **argv)
 {
-	t_stack	*stack_a;
+	t_stack	**stack_a;
 	int		i;
 	int		j;
 	char	**tmp;
-	t_stack	*s_tmp;
 
 	i = 1;
-	stack_a = NULL;
+	stack_a = malloc(sizeof(t_stack *));
+	if (!stack_a)
+		return (NULL);
+	*stack_a = NULL;
 	while (ac > i)
 	{
 		j = 0;
@@ -103,12 +102,11 @@ t_stack	*create_stack(int ac, char **argv)
 		while (tmp[j])
 		{
 			check_digital(tmp[j]);
-			s_tmp = stack_new_element(ft_atoi(tmp[j]));
-			addstack_back(&stack_a, s_tmp);
-			check_repeat(stack_a);
+			addstack_back(stack_a, stack_new_element(ft_atoi(tmp[j])));
+			check_repeat(*stack_a);
 			j++;
 		}
-		free_str(tmp);
+		free_str (tmp);
 		i++;
 	}
 	return (stack_a);
