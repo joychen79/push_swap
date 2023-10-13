@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 14:56:46 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/02 18:53:58 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/07 18:02:56 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ static void	swap(t_stack **stack)
 {
 	t_stack	*aux;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	aux = (*stack)->next;
-	(*stack)->next = *stack;
+	(*stack)->next = aux->next;
+	aux->next = *stack;
 	*stack = aux;
 }
 

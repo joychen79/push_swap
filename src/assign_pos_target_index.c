@@ -6,13 +6,12 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 12:59:00 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 16:55:43 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:26:10 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-//在stack_a的数值按位置排序
 void	assign_position(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -27,8 +26,6 @@ void	assign_position(t_stack **stack)
 		i++;
 	}
 }
-
-//找到最小数值的位置序号
 
 int	find_min_position(t_stack **stack)
 {
@@ -51,7 +48,6 @@ int	find_min_position(t_stack **stack)
 	}
 	return (min_pos);
 }
-//从 stack_a 往 stack_b 里发送数值时，找每个数值的应该所在的位置
 
 static int	target_position(t_stack **stack_a, int index_b,
 											int target_idx, int target_pos)
@@ -83,8 +79,6 @@ static int	target_position(t_stack **stack_a, int index_b,
 	return (target_pos);
 }
 
-//在stack_b里位置排序
-
 void	find_target_position(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*b;
@@ -102,7 +96,7 @@ void	find_target_position(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-void	assign_index(t_stack *stack, int stack_size)
+void	assign_index(t_stack *stack_a, int stack_size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
@@ -110,7 +104,7 @@ void	assign_index(t_stack *stack, int stack_size)
 
 	while (--stack_size > 0)
 	{
-		ptr = stack;
+		ptr = stack_a;
 		value = INT_MIN;
 		highest = NULL;
 		while (ptr)
@@ -121,7 +115,7 @@ void	assign_index(t_stack *stack, int stack_size)
 			{
 				value = ptr->value;
 				highest = ptr;
-				ptr = stack;
+				ptr = stack_a;
 			}
 			else
 				ptr = ptr->next;

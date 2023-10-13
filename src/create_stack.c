@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/04 19:25:48 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/07 16:53:46 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	check_min_max(char **numbers)
 	}
 }
 
-static void	check_repeat(t_stack *stack)
+int	check_repeat(t_stack *stack)
 {
 	t_stack	*tmp;
 
@@ -56,13 +56,13 @@ static void	check_repeat(t_stack *stack)
 		{
 			if (stack->value == tmp->value)
 			{
-				free_stack(&stack);
-				error_message();
+				return (1);
 			}
 				tmp = tmp->next;
 		}
 		stack = stack->next;
 	}
+	return (0);
 }
 
 static t_stack	*stack_new_element(int value)
@@ -82,18 +82,16 @@ static t_stack	*stack_new_element(int value)
 	return (new);
 }
 
-t_stack	**create_stack(int ac, char **argv)
+t_stack	*create_stack(int ac, char **argv)
 {
-	t_stack	**stack_a;
+	t_stack	*stack_a;
 	int		i;
 	int		j;
 	char	**tmp;
+	t_stack	*s_tmp;
 
 	i = 1;
-	stack_a = malloc(sizeof(t_stack *));
-	if (!stack_a)
-		return (NULL);
-	*stack_a = NULL;
+	stack_a = NULL;
 	while (ac > i)
 	{
 		j = 0;
@@ -102,11 +100,12 @@ t_stack	**create_stack(int ac, char **argv)
 		while (tmp[j])
 		{
 			check_digital(tmp[j]);
-			addstack_back(stack_a, stack_new_element(ft_atoi(tmp[j])));
-			check_repeat(*stack_a);
+			s_tmp = stack_new_element(ft_atoi(tmp[j]));
+			addstack_back(&stack_a, s_tmp);
 			j++;
 		}
-		free_str (tmp);
+		free_str(tmp);
+		free(tmp);
 		i++;
 	}
 	return (stack_a);

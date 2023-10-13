@@ -6,39 +6,22 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 15:12:04 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/04 17:29:11 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:25:25 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	addstack_back(t_stack **stack, t_stack *new)
-{
-	t_stack	*aux;
-
-	if (!stack)
-		return ;
-	if (*stack)
-	{
-			aux = *stack;
-		while (aux->next)
-				aux = aux->next;
-			aux->next = new;
-	}
-	else
-		*stack = new;
-}
-
 static void	rotate(t_stack **stack)
 {
 	t_stack	*aux;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
 	aux = *stack;
 	*stack = (*stack)->next;
-	addstack_back(stack, aux);
 	aux->next = NULL;
+	addstack_back(stack, aux);
 }
 
 void	ra(t_stack **stack_a)

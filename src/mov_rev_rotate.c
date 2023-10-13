@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 15:12:04 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 19:24:49 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:25:31 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,13 @@ static void	rev_rotate(t_stack **stack)
 {
 	t_stack	*aux;
 	t_stack	*last;
-	int		i;
 
-	i = 0;
-	last = *stack;
-	while (i++ < stack_size(*stack) - 1)
-		last = last->next;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return ;
 	aux = *stack;
-	while (i++ < stack_size(*stack) - 2)
+	while (aux->next->next)
 		aux = aux->next;
+	last = aux->next;
 	last->next = *stack;
 	*stack = last;
 	aux->next = NULL;

@@ -20,7 +20,7 @@ LIBFT_SRC			=	./libft/
 
 CC					=	gcc
 RM					=	rm -f
-CFLAGS				=	-Wall -Werror -Wextra -fsanitize=address -g3
+CFLAGS				=	-Wall -Werror -Wextra
 
 
 all:		$(LIBFT) $(NAME)
@@ -35,9 +35,10 @@ bonus:		$(LIBFT) $(OBJSBNS)
 			@$(CC) $(CFLAGS) $(OBJSBNS) $(LIBFT_SRC)$(LIBFT) -o $(NAME_BONUS)
 
 clean:
-			@$(RM) $(NAME) $(OBJS) $(OBJSBNS) $(NAME_BONUS)
+			@$(RM) $(OBJS) $(OBJSBNS)
 
 fclean:		clean
+			@$(RM) $(NAME)
 			@make -C libft fclean
 
 re:			fclean all

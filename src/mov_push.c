@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:44:21 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/23 16:59:22 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/07 17:43:47 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*aux;
 
-	if (*src == NULL)
+	if (*src == NULL || src == NULL || dest == NULL)
 		return ;
 	aux = (*src)->next;
 	(*src)->next = *dest;

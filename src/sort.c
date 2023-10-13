@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 16:37:57 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/29 18:24:05 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/07 17:36:55 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	pb_keep_three(t_stack **stack_a, t_stack **stack_b)
 	size = stack_size(*stack_a);
 	pushb = 0;
 	i = 0;
-	while (size > 3 && i < size && pushb < size / 2)
+	while (size > 6 && i < size && pushb < size / 2)
 	{
 		if ((*stack_a)->index <= size / 2)
 		{

@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:57:53 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/04 18:30:50 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:25:00 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,42 +21,31 @@ void	free_stack(t_stack **s)
 		while (*s)
 		{
 			tmp = (*s)->next;
-			printf("hola%p %d\n", *s, (*s)->value);
 			free(*s);
-			*s = tmp;
+			(*s) = tmp;
 		}
-		free(s);
 	}
 }
 
 void	free_str(char **lst)
 {
-	int	i;
+	char	*n1;
 
-	i = 0;
-	while (lst[i])
+	if (!lst)
+		return ;
+	while (*lst)
 	{
-		free(lst[i]);
-		i++;
+		n1 = *lst;
+		lst++;
+		free(n1);
 	}
-	lst = NULL;
+	*lst = NULL;
 }
 
 void	error_message(void)
 {
 	ft_printf("Error\n");
 	exit (1);
-}
-
-int	is_sorted(t_stack *stack)
-{
-	while (stack->next != NULL)
-	{
-		if (stack->value > stack->next->value)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
 }
 
 int	stack_size(t_stack *stack)
@@ -72,4 +61,21 @@ int	stack_size(t_stack *stack)
 		size++;
 	}
 	return (size);
+}
+
+void	addstack_back(t_stack **stack, t_stack *new)
+{
+	t_stack	*aux;
+
+	if (!stack)
+		return ;
+	if (*stack)
+	{
+			aux = *stack;
+		while (aux->next)
+				aux = aux->next;
+			aux->next = new;
+	}
+	else
+		*stack = new;
 }
