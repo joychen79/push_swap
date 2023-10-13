@@ -15,6 +15,18 @@ SRCS	=	src/push_swap.c\
 
 OBJS	= $(SRCS:.c=.o)
 
+NAME_BONUS			=	checker
+BONUS_SRC			=	src/mov_push.c\
+						src/mov_rev_rotate.c\
+						src/mov_rotate.c\
+						src/mov_swap.c\
+						src/utils.c\
+						src/create_stack.c\
+						src/short_sort.c\
+						src/checker_bonus.c
+
+OBJSBNS			= $(BONUS_SRC:.c=.o)
+
 LIBFT				=	libft.a
 LIBFT_SRC			=	./libft/
 
@@ -38,7 +50,7 @@ clean:
 			@$(RM) $(OBJS) $(OBJSBNS)
 
 fclean:		clean
-			@$(RM) $(NAME)
+			@$(RM) $(NAME) $(NAME_BONUS)
 			@make -C libft fclean
 
 re:			fclean all
