@@ -32,7 +32,7 @@ LIBFT_SRC			=	./libft/
 
 CC					=	gcc
 RM					=	rm -f
-CFLAGS				=	-Wall -Werror -Wextra
+CFLAGS				=	-Wall -Werror -Wextra -g3 -fsanitize=address
 
 
 all:		$(LIBFT) $(NAME)

@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 17:04:41 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/07 16:53:46 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:18:51 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ static t_stack	*stack_new_element(int value)
 		return (NULL);
 	new->value = value;
 	new->index = 0;
-	new->pos = -1;
-	new->target_pos = -1;
-	new->cost_a = -1;
-	new->cost_b = -1;
+	new->pos = 0;
+	new->target_pos = 0;
+	new->cost_a = 0;
+	new->cost_b = 0;
 	new->next = NULL;
 	return (new);
 }

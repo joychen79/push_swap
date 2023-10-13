@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 22:08:08 by jingchen          #+#    #+#             */
-/*   Updated: 2023/09/09 13:11:41 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 16:45:52 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 # include <string.h>
 # include <ctype.h>
 # include <stdarg.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 typedef struct s_list
 {
@@ -79,5 +84,14 @@ int		ft_putptr(unsigned long n);
 int		ft_puthexupper(unsigned int n);
 int		ft_puthexlower(unsigned int n);
 int		ft_printf(char const *format, ...);
+char	*get_next_line(int fd);
+size_t	gnl_strlen(char *s);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strjoin(char *s1, char *s2);
+void	*gnl_calloc(int count, int size);
+char	*join_buffer(char *old, char *new);
+char	*read_line(int fd, char *buffer);
+char	*get_newline(char *buffer);
+char	*get_newbuffer(char *buffer);
 
 #endif

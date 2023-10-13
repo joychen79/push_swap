@@ -6,7 +6,7 @@
 #    By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/04 18:56:36 by jingchen          #+#    #+#              #
-#    Updated: 2023/10/04 18:26:00 by jingchen         ###   ########.fr        #
+#    Updated: 2023/10/13 16:47:19 by jingchen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,9 @@ SRCS			=	ft_isalnum.c \
 					ft_putnbr.c \
 					ft_putptr.c \
 					ft_putstr.c \
-					ft_putunbr.c 
+					ft_putunbr.c \
+					get_next_line.c \
+					get_next_line_utils.c
 					
 OBJS			= $(SRCS:.c=.o)
 

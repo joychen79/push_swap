@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 13:18:29 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/13 15:25:09 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/13 17:51:22 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_sorted(t_stack *stack)
 {
-	while (stack->next != NULL)
+	while (stack && stack->next != NULL)
 	{
 		if (stack->value > stack->next->value)
 			return (0);
