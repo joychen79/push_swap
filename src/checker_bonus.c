@@ -6,7 +6,7 @@
 /*   By: jingchen <jingchen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:03:37 by jingchen          #+#    #+#             */
-/*   Updated: 2023/10/13 17:53:43 by jingchen         ###   ########.fr       */
+/*   Updated: 2023/10/16 20:43:12 by jingchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	main(int ac, char **av)
 	unsigned int	len;
 
 	stack_a = create_stack(ac, av);
+	if (!stack_a || check_repeat(stack_a))
+		error_message();
 	stack_b = NULL;
 	move = get_next_line(0);
 	while (move != NULL)
